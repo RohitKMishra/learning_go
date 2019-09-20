@@ -6,7 +6,7 @@ func main(){
 
 	for i:= 10; i <=100; i++{
 	
-		fmt.Println(i%4)
+		fmt.Printf("When %v is divided by 4, reminder aka modulo is %v\n",i,i%4)
 
 	}
 }
