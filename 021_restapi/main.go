@@ -43,6 +43,7 @@ func getBook(w http.ResponseWriter, router *http.Request) {
 			return
 		}
 	}
+	json.NewEncoder(w).Encode(&Book{})
 }
 
 // create new book
