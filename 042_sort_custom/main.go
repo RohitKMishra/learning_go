@@ -5,33 +5,33 @@ import (
 	"sort"
 )
 
-type Person struct {
+type person struct {
 	First string
 	Age   int
 }
 
-type ByAge []Person
+type byAge []person
 
-func (a ByAge) Len() int           { return len(a) }
-func (a ByAge) Swap(i, j int)      { a[i], a[j] = a[j], a[i] }
-func (a ByAge) Less(i, j int) bool { return a[i].Age < a[j].Age }
+func (a byAge) Len() int           { return len(a) }
+func (a byAge) Swap(i, j int)      { a[i], a[j] = a[j], a[i] }
+func (a byAge) Less(i, j int) bool { return a[i].Age < a[j].Age }
 
-type ByName []Person
+type byName []person
 
-func (bn ByName) Len() int           { return len(bn) }
-func (bn ByName) Swap(i, j int)      { bn[i], bn[j] = bn[j], bn[i] }
-func (bn ByName) Less(i, j int) bool { return bn[i].First < bn[j].First }
+func (bn byName) Len() int           { return len(bn) }
+func (bn byName) Swap(i, j int)      { bn[i], bn[j] = bn[j], bn[i] }
+func (bn byName) Less(i, j int) bool { return bn[i].First < bn[j].First }
 
 func main() {
 
-	p1 := Person{"James", 32}
-	p2 := Person{"MoneyPenny", 26}
-	p3 := Person{"Q", 64}
-	p4 := Person{"M", 34}
+	p1 := person{"James", 32}
+	p2 := person{"MoneyPenny", 26}
+	p3 := person{"Q", 64}
+	p4 := person{"M", 34}
 
-	people := []Person{p1, p2, p3, p4}
+	people := []person{p1, p2, p3, p4}
 
 	fmt.Println(people)
-	sort.Sort(ByAge(people))
+	sort.Sort(byAge(people))
 	fmt.Println(people)
 }
